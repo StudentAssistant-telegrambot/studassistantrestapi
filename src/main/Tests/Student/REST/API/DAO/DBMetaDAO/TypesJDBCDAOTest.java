@@ -1,4 +1,4 @@
-package DBMetaDAOTests;
+package Student.REST.API.DAO.DBMetaDAO;
 
 import Student.REST.API.DAO.DBMetaDAO.TypesJDBCDAO;
 import Student.REST.API.DBEntities.Types;
@@ -38,9 +38,8 @@ class TypesJDBCDAOTest {
     @org.junit.jupiter.api.Test
     void create() throws SQLException {
         Types type3 = dao.create(new Types("3"));
-        assertTrue(type3.getId() > type2.getId());
         assertTrue(type3.getName().equals("3"));
-        assertTrue(type3.getId() > type1.getId());
+        dao.delete(type3.getId());
     }
 
     @org.junit.jupiter.api.Test
@@ -71,7 +70,7 @@ class TypesJDBCDAOTest {
     @org.junit.jupiter.api.Test
     void getAll() {
         List<Types> tps = dao.getAll();
-        Boolean idp = tps.get(1).getId() == type1.getId() || tps.get(1).getId() == type2.getId();
+        Boolean idp = tps.contains(type1) && tps.contains(type2);
         assertTrue(idp);
     }
 }

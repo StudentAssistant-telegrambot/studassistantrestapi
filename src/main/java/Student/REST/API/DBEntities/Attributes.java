@@ -1,5 +1,7 @@
 package Student.REST.API.DBEntities;
 
+import java.util.Objects;
+
 public class Attributes {
     private int id;
     private  String name;
@@ -40,4 +42,13 @@ public class Attributes {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public boolean equals(java.lang.Object object){
+        if (object != null)
+            if (object instanceof Attributes)
+                return ((Attributes) object).getId() == id && ((Attributes) object).getType_id() == type_id && Objects.equals(((Attributes) object).getName(), getName());
+     return false;
+    }
+
 }

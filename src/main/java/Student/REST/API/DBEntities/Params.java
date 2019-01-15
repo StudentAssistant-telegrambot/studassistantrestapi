@@ -1,5 +1,7 @@
 package Student.REST.API.DBEntities;
 
+import java.util.Objects;
+
 public class Params {
     private int id;
     private int object_id;
@@ -50,5 +52,14 @@ public class Params {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object object){
+        if (object != null)
+            if (object instanceof Params)
+                return ((Params) object).getId() == getId() && ((Params) object).getObject_id() == getObject_id() &&
+                        ((Params) object).getAttribute_id() == getAttribute_id() && Objects.equals(((Params) object).getValue(), getValue());
+        return false;
     }
 }
