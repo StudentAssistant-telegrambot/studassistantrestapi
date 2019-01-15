@@ -34,3 +34,4 @@ CREATE TABLE `metamapz`.`students` (
   `group` VARCHAR(35) NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE);
+
