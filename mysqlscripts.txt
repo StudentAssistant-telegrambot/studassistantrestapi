@@ -26,3 +26,12 @@ CREATE TABLE `metamapz`.`atts` (
   PRIMARY KEY (`att_id`),
   UNIQUE KEY `att_id_UNIQUE` (`att_id`)
 );
+CREATE TABLE `metamapz`.`students` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `firstname` VARCHAR(100) NULL,
+  `secondname` VARCHAR(100) NULL,
+  `age` INT NULL,
+  `group` VARCHAR(35) NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE);
+
