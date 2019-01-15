@@ -1,4 +1,4 @@
-package DBMetaDAOTests;
+package Student.REST.API.DAO.DBMetaDAO;
 
 import Student.REST.API.DAO.DBMetaDAO.TypesJDBCDAO;
 import Student.REST.API.DBEntities.Types;
@@ -41,6 +41,7 @@ class TypesJDBCDAOTest {
         assertTrue(type3.getId() > type2.getId());
         assertTrue(type3.getName().equals("3"));
         assertTrue(type3.getId() > type1.getId());
+        dao.delete(type3.getId());
     }
 
     @org.junit.jupiter.api.Test

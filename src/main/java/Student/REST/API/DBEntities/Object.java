@@ -1,5 +1,7 @@
 package Student.REST.API.DBEntities;
 
+import java.util.Objects;
+
 public class Object {
     private int id;
     private int type_id;
@@ -39,5 +41,14 @@ public class Object {
 
     public void setType_id(int type_id) {
         this.type_id = type_id;
+    }
+
+
+    @Override
+    public boolean equals(java.lang.Object object){
+        if (object instanceof Object)
+            if (object != null)
+                return ((Object) object).id == this.id && ((Object) object).type_id == type_id && Objects.equals(((Object) object).name, name);
+     return false;
     }
 }
