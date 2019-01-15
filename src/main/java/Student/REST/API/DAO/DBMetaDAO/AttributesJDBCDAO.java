@@ -125,7 +125,7 @@ public class AttributesJDBCDAO extends DBEntitiesDAO<Attributes> {
                 preparedStatement = connection.prepareStatement(get_by_type_id);
                 preparedStatement.setInt(1, typeId);
                 ResultSet resultSet = preparedStatement.executeQuery();
-                if (resultSet.next()){
+                while (resultSet.next()){
                     int id = resultSet.getInt(1);
                     String name = resultSet.getString(2);
                     res.add(new Attributes(id, typeId, name));
