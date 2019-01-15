@@ -1,0 +1,36 @@
+CREATE TABLE `metamapz`.`types` (
+  `type_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`type_id`),
+  UNIQUE KEY `type_id_UNIQUE` (`type_id`)
+);
+CREATE TABLE `metamapz`.`params` (
+  `params_id` int(11) NOT NULL AUTO_INCREMENT,
+  `obj_id` int(11) NOT NULL,
+  `att_id` int(11) NOT NULL,
+  `value` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`params_id`),
+  UNIQUE KEY `params_id_UNIQUE` (`params_id`)
+);
+CREATE TABLE `metamapz`.`object` (
+  `obj_id` int(11) NOT NULL AUTO_INCREMENT,
+  `type_id` int(11) NOT NULL,
+  `name` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`obj_id`),
+  UNIQUE KEY `obj_id_UNIQUE` (`obj_id`)
+);
+CREATE TABLE `metamapz`.`atts` (
+  `att_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(10) DEFAULT NULL,
+  `type_id` int(11) NOT NULL,
+  PRIMARY KEY (`att_id`),
+  UNIQUE KEY `att_id_UNIQUE` (`att_id`)
+);
+CREATE TABLE `metamapz`.`students` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `firstname` VARCHAR(100) NULL,
+  `secondname` VARCHAR(100) NULL,
+  `age` INT NULL,
+  `group` VARCHAR(35) NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE);
