@@ -126,7 +126,7 @@ public class ObjectJDBCDAO extends DBEntitiesDAO<Object> {
                 preparedStatement = connection.prepareStatement(get_by_type_id);
                 preparedStatement.setInt(1, typeId);
                 ResultSet resultSet = preparedStatement.executeQuery();
-                if (resultSet.next()){
+                while (resultSet.next()){
                     int id = resultSet.getInt(1);
                     String name = resultSet.getString(3);
                     res.add(new Object(id, typeId, name));

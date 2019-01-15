@@ -135,7 +135,7 @@ public class ParamsJDBCDAO extends DBEntitiesDAO<Params> {
                 preparedStatement = connection.prepareStatement(get_by_obj_id);
                 preparedStatement.setInt(1, objId);
                 ResultSet resultSet = preparedStatement.executeQuery();
-                if (resultSet.next()){
+                while (resultSet.next()){
                     int id = resultSet.getInt(1);
                     int attid = resultSet.getInt(3);
                     String value = resultSet.getString(4);
@@ -157,7 +157,7 @@ public class ParamsJDBCDAO extends DBEntitiesDAO<Params> {
                 preparedStatement = connection.prepareStatement(get_by_att_id);
                 preparedStatement.setInt(1, attId);
                 ResultSet resultSet = preparedStatement.executeQuery();
-                if (resultSet.next()){
+                while (resultSet.next()){
                     int id = resultSet.getInt(1);
                     int objid = resultSet.getInt(2);
                     String value = resultSet.getString(4);

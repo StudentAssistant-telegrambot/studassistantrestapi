@@ -43,7 +43,6 @@ public class Object {
         this.type_id = type_id;
     }
 
-
     @Override
     public boolean equals(java.lang.Object object){
         if (object instanceof Object)
